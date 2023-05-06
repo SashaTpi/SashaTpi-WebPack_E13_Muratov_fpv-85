@@ -15,7 +15,7 @@ module.exports = {
     modules: false
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, 'dist'),
     compress: true,
     port: 3000,
     hot: true,
@@ -33,10 +33,9 @@ module.exports = {
       template: './src/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.css', 
-      publicPath: '/',
+      filename: 'style.css',
     }),
     new webpack.HotModuleReplacementPlugin(),
-    
   ],
 };
+
